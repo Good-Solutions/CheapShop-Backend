@@ -8,7 +8,6 @@ pipeline {
     stage ('Compile Stage') {
       steps {
         withMaven(maven : 'MAVEN_3_6_3') {
-          bat 'cd CheapShop'
           bat 'mvn clean compile'
         }
       }
@@ -16,7 +15,6 @@ pipeline {
     stage ('Testing Stage') {
        steps {
          withMaven(maven : 'MAVEN_3_6_3') {
-           bat 'cd CheapShop'
            bat 'mvn test'
          }
        }
@@ -24,7 +22,6 @@ pipeline {
     stage ('package Stage') {
       steps {
         withMaven(maven : 'MAVEN_3_6_3') {
-          bat 'cd CheapShop'
           bat 'mvn package'
         }
       }
